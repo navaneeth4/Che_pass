@@ -1,0 +1,77 @@
+{{!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Page</title>
+</head>
+<body>
+  <h1>Signup Page</h1>
+  {{#if error}}
+  <div style="color: red;">{{error}}</div>
+  {{/if}}
+  {{#if success}}
+  <div style="color: green;">{{success}}</div>
+  {{/if}}
+  <form action="/signup" method="post">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+    </div>
+    <div>
+      <label for="email">Email:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <input type="email" id="email" name="email" required><br><br>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+    </div>
+    <div>
+      <input type="submit" value="Signup">
+    </div>
+  </form>
+</body>
+</html> --}}
+
+<head>
+  <link rel="stylesheet" href="/css/style2.css">
+</head>
+<body>
+  {{#if error}}
+  <div style="color: black;">{{error}}</div>
+  {{/if}}
+  {{#if success}}
+  <div style="color: green;">{{success}}</div>
+  {{/if}}
+  </body>
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" action="/signup" method="post">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" name="username" placeholder="Username" required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="email" class="login__input" name="email" placeholder="Email" required>
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" name="password" placeholder="Password" required>
+				</div>
+				<button class="button login__submit">
+					<span class="button__text">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Signup Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+					<p>Already have an account? <a href="/ind">Login</p>		
+			</form>
+			<div class="social-login">
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>

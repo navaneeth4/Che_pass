@@ -1,0 +1,55 @@
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #ddd;
+  }
+</style>
+  {{#if error}}
+  <div style="color: black;">{{error}}</div>
+  {{/if}}
+  {{#if success}}
+  <div style="color: green;">{{success}}</div>
+  {{/if}}
+<h1>Player Details</h1>
+<title>Player Details</title>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Position</th>
+      <th>Nationality</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cfcData}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.position}}</td>
+        <td>{{this.nationality}}</td>
+        <td>
+          <form action="/cfc/{{this._id}}?_method=DELETE" method="POST">
+            <button onclick="return confirm('Are you sure you want to delete this player?')">Delete</button> 
+          </form>
+          </td>
+           <td>
+          <form action="/cfc/{{this._id}}/edit" method="GET">
+            <button onclick="return confirm('Are you sure you want to edit this player?')">Edit</button> 
+          </form>
+        </td>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
